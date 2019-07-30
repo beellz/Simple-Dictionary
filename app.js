@@ -1,3 +1,23 @@
+
+function getMeaning() {
+   let word = document.getElementById('myword').value;
+   console.log(word);
+   let ptag = document.getElementById('hereon');    
+  var OurRequest = new XMLHttpRequest();
+  OurRequest.open('GET', 'https://googledictionaryapi.eu-gb.mybluemix.net/?define='+ word);
+  OurRequest.onload = function() {
+    var ourData = JSON.parse(OurRequest.responseText);
+    var meaning = ourData[0].meaning.noun[0].definition;
+    ptag.innerHTML = meaning;
+  };
+  OurRequest.send();
+};
+
+
+
+
+
+
 // const getMeaning = () => {
 //   document.querySelector('.defs').innerHTML = ''
 //   document.querySelector('.means').style.display = 'block'
@@ -27,22 +47,6 @@
 // document.querySelector("tryhere").innerHTML = help;
 
 
-
-
-
-function getMeaning() {
-   let word = document.getElementById('myword').value;
-   console.log(word);
-   let ptag = document.getElementById('hereon');    
-  var OurRequest = new XMLHttpRequest();
-  OurRequest.open('GET', 'https://googledictionaryapi.eu-gb.mybluemix.net/?define='+ word);
-  OurRequest.onload = function() {
-    var ourData = JSON.parse(OurRequest.responseText);
-    var meaning = ourData[0].meaning.noun[0].definition;
-    ptag.innerHTML = meaning;
-  };
-  OurRequest.send();
-};
 
 // var OurRequest = new XMLHttpRequest();
 // OurRequest.open('GET', 'https://googledictionaryapi.eu-gb.mybluemix.net/?define='+ word);
