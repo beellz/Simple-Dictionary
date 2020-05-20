@@ -26,35 +26,41 @@ function getMeaning() {
             // putting everything into data
     
             const data = await response.json();
-    
-            // making random number  
-            // also using the .lenght to take the lenght of the data dynamically .
-    
-            // let randomNUMs = Math.floor(Math.random() * data.length )
-            // console.log(randomNUMs)
-    
-            // using random number to call certain api main
-            console.log(data);
-            // let text = data[randomNUMs].text
-            // let author = data[randomNUMs].author
-    
-            // consoling it to check
-            // console.log(text);
-            // console.log(author)
-    
-            // making outputall to store data 
-    
-            // let outputall =  `
-            //          <ul>
-            //              <li>" ${text}"</li>
-            //              <li> - ${author}</li>
-            //             </ul    
-            //              `;
+            console.log(data);          
+            let word2 = data[0].word;
+            let word3 = word2.toUpperCase()
             
-            //              // 
-            // // putting it all in innerHTML
+            console.log(word3);
+            let defination = data[0].meaning.noun[0].definition;
+            console.log(defination);
+            let example = data[0].meaning.noun[0].example;
+            let origin = data[0].origin;
+            let syn = data[0].meaning.noun[0].synonyms[0]
+            console.log(syn);
+            
     
-            // // document.querySelector(".quote").innerHTML= outputall;
+            let outputall =  `
+                    <div class = "card OutAll "
+                     <ul class="card-body ">
+                        <li> The Word is : ${word3}</li>
+                        <br>
+                          <li> Origin : ${origin} </li>
+                          <br>
+                         <li>  Defination : ${defination}</li>
+                         <br>
+                         <li>  Example : ${example}</li>
+                         <br>
+                         <li>  Synonyms : ${syn} </li>
+                         <br>
+                          <li> 
+                         </ul>
+                      </div>      
+                         `;
+            
+                        
+            // putting it all in innerHTML
+    
+           document.querySelector(".output").innerHTML= outputall;
         
         }
 
