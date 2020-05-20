@@ -1,3 +1,6 @@
+.above {
+    padding: 40px 40px;
+}
 .OutAll {
     font-size: 2em;
    padding: 20px 20px ;
@@ -8,4 +11,8 @@
 .OutAll , ul {
     text-decoration: none;
     list-style:none;
+}
+
+.form-control {
+    font-size: 2em;
 }

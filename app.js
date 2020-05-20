@@ -35,8 +35,8 @@ function getMeaning() {
             console.log(defination);
             let example = data[0].meaning.noun[0].example;
             let origin = data[0].origin;
-            let syn = data[0].meaning.noun[0].synonyms[0]
-            console.log(syn);
+            // let syn = data[0].meaning.noun[0].synonyms[0]
+            // console.log(syn);
             
     
             let outputall =  `
@@ -49,10 +49,6 @@ function getMeaning() {
                          <li>  Defination : ${defination}</li>
                          <br>
                          <li>  Example : ${example}</li>
-                         <br>
-                         <li>  Synonyms : ${syn} </li>
-                         <br>
-                          <li> 
                          </ul>
                       </div>      
                          `;
