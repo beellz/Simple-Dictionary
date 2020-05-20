@@ -1,17 +1,66 @@
 
+// function getMeaning() {
+//    let word = document.getElementById('myword').value;
+//    console.log(word);
+//    let ptag = document.getElementById('hereon');    
+//   var OurRequest = new XMLHttpRequest();
+//   OurRequest.open('GET', 'https://googledictionaryapi.eu-gb.mybluemix.net/?define='+ word);
+//   OurRequest.onload = function() {
+//     var ourData = JSON.parse(OurRequest.responseText);
+//     var meaning = ourData[0].meaning.noun[0].definition;
+//     ptag.innerHTML = meaning;
+//   };
+//   OurRequest.send();
+// };
+
+
+
 function getMeaning() {
-   let word = document.getElementById('myword').value;
-   console.log(word);
-   let ptag = document.getElementById('hereon');    
-  var OurRequest = new XMLHttpRequest();
-  OurRequest.open('GET', 'https://googledictionaryapi.eu-gb.mybluemix.net/?define='+ word);
-  OurRequest.onload = function() {
-    var ourData = JSON.parse(OurRequest.responseText);
-    var meaning = ourData[0].meaning.noun[0].definition;
-    ptag.innerHTML = meaning;
-  };
-  OurRequest.send();
-};
+  let word = document.getElementById('myword').value;
+
+ 
+    // async function to call api
+        async function API() {
+    
+            const response = await fetch("https://googledictionaryapi.eu-gb.mybluemix.net/?define=" + word);
+            // putting everything into data
+    
+            const data = await response.json();
+    
+            // making random number  
+            // also using the .lenght to take the lenght of the data dynamically .
+    
+            // let randomNUMs = Math.floor(Math.random() * data.length )
+            // console.log(randomNUMs)
+    
+            // using random number to call certain api main
+            console.log(data);
+            // let text = data[randomNUMs].text
+            // let author = data[randomNUMs].author
+    
+            // consoling it to check
+            // console.log(text);
+            // console.log(author)
+    
+            // making outputall to store data 
+    
+            // let outputall =  `
+            //          <ul>
+            //              <li>" ${text}"</li>
+            //              <li> - ${author}</li>
+            //             </ul    
+            //              `;
+            
+            //              // 
+            // // putting it all in innerHTML
+    
+            // // document.querySelector(".quote").innerHTML= outputall;
+        
+        }
+
+        API();
+
+}
 
 
 
